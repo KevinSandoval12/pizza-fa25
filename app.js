@@ -37,14 +37,14 @@ const orders = [];
 // Define the port number where our server will listen
 const PORT = 4001;
 
-// app.get("/db-test", async (req, res) => {
-//   try {
-//     const [orders] = await pool.query("SELECT * FROM orders");
-//     res.send(orders);
-//   } catch (err) {
-//     console.error("Database Error:", err);
-//   }
-// });
+app.get("/db-test", async (req, res) => {
+  try {
+    const [orders] = await pool.query("SELECT * FROM orders");
+    res.send(orders);
+  } catch (err) {
+    console.error("Database Error:", err);
+  }
+});
 
 app.get("/admin", async (req, res) => {
   try {
