@@ -27,7 +27,6 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 // create an array to store orders
-const orders = [];
 
 // Allow the app to parse form data (req.body)
 app.use(express.urlencoded({ extended: true }));
@@ -65,7 +64,6 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-<<<<<<< HEAD
 app.get("/contact", (req, res) => {
   res.render("contact");
 });
@@ -99,50 +97,6 @@ app.post("/submit-order", (req, res) => {
 });
 
 // Start the server and make it listen on the port
-=======
-// Define a "contact-us" route
-app.get('/contact-us', (req, res) => {
-    res.sendFile(`${import.meta.dirname}/views/contact.html`);
-});
-
-// Define a "confirmation" route
-app.get('/confirm', (req, res) => {
-    res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
-});
-
-// Define an "admin" route
-app.get('/admin', (req, res) => {
-
-    res.send(orders);
-    //res.sendFile(`${import.meta.dirname}/views/admin.html`);
-});
-
-// Define an "submit-order" route
-app.post('/submit-order', (req, res) => {
-
-    //console.log(req.body);
-
-    // Create a JSON object to store the data
-    const order = {
-        fname: req.body.fname,
-        lname: req.body.lname,
-        email: req.body.email,
-        method: req.body.method,
-        toppings: req.body.toppings,
-        size: req.body.size,
-        comment: req.body.comment
-      };
-
-      // Add order to array
-      orders.push(order);
-      console.log(orders);
-
-      // Send user to confirmation page
-      res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
-});
-
-// Start the server and make it listen on the port 
->>>>>>> ca69c8ca0e236f6382992b1e64b678df334e5fd3
 // specified above
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
