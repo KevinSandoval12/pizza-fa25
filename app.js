@@ -35,7 +35,7 @@ app.use(express.urlencoded({ extended: true }));
 const orders = [];
 
 // Define the port number where our server will listen
-const PORT = 3001;
+const PORT = 4000;
 
 // app.get("/db-test", async (req, res) => {
 //   try {
